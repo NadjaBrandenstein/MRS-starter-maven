@@ -16,6 +16,7 @@ public class MovieViewController implements Initializable {
     public ListView<Movie> lstMovies;
     private MovieModel movieModel;
 
+    //Constructor
     public MovieViewController()  {
 
         try {
