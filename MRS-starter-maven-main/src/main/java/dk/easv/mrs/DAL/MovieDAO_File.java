@@ -11,6 +11,8 @@ import java.util.List;
 //Project import
 import dk.easv.mrs.BE.Movie;
 
+import static java.nio.file.StandardOpenOption.APPEND;
+
 public class MovieDAO_File implements IMovieDataAccess {
 
     // Relative path (den er ligeglad med hvad der ligger foran e.g c://...)
@@ -61,7 +63,13 @@ public class MovieDAO_File implements IMovieDataAccess {
 
     @Override
     public Movie createMovie(String title, int year) throws Exception {
+        return null;
+    }
+
+
+    public Movie createMovie(Movie newMovie) throws Exception {
         List<String> movies = Files.readAllLines(filePath);
+        int id;
 
         if (movies.size() > 0) {
             // get next id
