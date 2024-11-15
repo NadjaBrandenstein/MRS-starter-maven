@@ -18,7 +18,6 @@ public class MovieModel {
     }
 
 
-
     public ObservableList<Movie> getObservableMovies() {
         return moviesToBeViewed;
     }

@@ -23,7 +23,7 @@ public class MovieViewController implements Initializable {
             movieModel = new MovieModel();
         } catch (Exception e) {
             displayError(e);
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -38,7 +38,7 @@ public class MovieViewController implements Initializable {
                 movieModel.searchMovie(newValue);
             } catch (Exception e) {
                 displayError(e);
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         });
 

@@ -63,11 +63,6 @@ public class MovieDAO_File implements IMovieDataAccess {
 
     @Override
     public Movie createMovie(String title, int year) throws Exception {
-        return null;
-    }
-
-
-    public Movie createMovie(Movie newMovie) throws Exception {
         List<String> movies = Files.readAllLines(filePath);
         int id;
 
@@ -75,6 +70,8 @@ public class MovieDAO_File implements IMovieDataAccess {
             // get next id
             String[] separatedLine = movies.get(movies.size() - 1).split(",");
             int nextId = Integer.parseInt(separatedLine[0]) + 1;
+
+            Movie newMovie;
             String newMovieLine = nextId + "," + newMovie.getYear() + "," + newMovie.getTitle();
             Files.write(filePath, (newMovieLine + "\r\n").getBytes(), APPEND);
 
@@ -82,7 +79,7 @@ public class MovieDAO_File implements IMovieDataAccess {
         }
         return null;
     }
-
+    
     @Override
     public void updateMovie(Movie movie) throws Exception {
     }
