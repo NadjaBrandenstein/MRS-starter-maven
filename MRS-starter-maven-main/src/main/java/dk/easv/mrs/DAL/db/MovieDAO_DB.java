@@ -1,4 +1,4 @@
-/*package dk.easv.mrs.DAL.db;
+package dk.easv.mrs.DAL.db;
 
 import dk.easv.mrs.BE.Movie;
 import dk.easv.mrs.DAL.IMovieDataAccess;
@@ -91,4 +91,4 @@ public class MovieDAO_DB implements IMovieDataAccess {
     public void deleteMovie(Movie movie) throws Exception {
 
     }
-}*/
+}

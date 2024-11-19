@@ -1,4 +1,4 @@
-/*package dk.easv.mrs.DAL.db;
+package dk.easv.mrs.DAL.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -39,4 +39,4 @@ public class DBConnector {
             System.out.println("Is it open? " + !connection.isClosed());
         } //Connection gets closed here
     }
-}*/
+}
