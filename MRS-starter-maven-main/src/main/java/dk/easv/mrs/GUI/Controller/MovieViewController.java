@@ -4,6 +4,7 @@ import dk.easv.mrs.BE.Movie;
 import dk.easv.mrs.GUI.Model.MovieModel;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import java.net.URL;
@@ -15,6 +16,8 @@ public class MovieViewController implements Initializable {
     public TextField txtMovieSearch;
     public ListView<Movie> lstMovies;
     private MovieModel movieModel;
+    public Button btnEdit;
+
 
     // Constructor
     public MovieViewController()  {
@@ -31,6 +34,20 @@ public class MovieViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        /*lstMovies.setItems(movieModel.getObservableMovies());
+
+        txtMovieSearch.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            try {
+                movieModel.searchMovie(newValue);
+            } catch (Exception e) {
+                displayError(e);
+                //e.printStackTrace();
+            }
+        });*/
+        //movieModel = getModel().getMovieModel();
+
+        btnEdit.setDisable(true);
+
         lstMovies.setItems(movieModel.getObservableMovies());
 
         txtMovieSearch.textProperty().addListener((observableValue, oldValue, newValue) -> {
@@ -42,7 +59,11 @@ public class MovieViewController implements Initializable {
             }
         });
 
+
     }
+
+
+
 
     private void displayError(Throwable t)
     {
