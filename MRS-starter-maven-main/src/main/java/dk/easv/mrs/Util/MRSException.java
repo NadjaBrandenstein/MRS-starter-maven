@@ -1,4 +1,4 @@
-package easv.mrs.Util;
+package dk.easv.mrs.Util;
 
 /**
  * @author smsj

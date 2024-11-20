@@ -19,6 +19,7 @@ public class MovieModel {
 
 
     public ObservableList<Movie> getObservableMovies() {
+
         return moviesToBeViewed;
     }
 
@@ -27,4 +28,34 @@ public class MovieModel {
         moviesToBeViewed.clear();
         moviesToBeViewed.addAll(searchResults);
     }
+
+    /*public void createNewMovie(Movie newMovie) throws MRSException {
+        Movie m = movieManager.createNewMovie(newMovie);
+        moviesToBeViewed.add(m); // update list
+
+        // loading entire file again... not optimal
+        //moviesToBeViewed.clear();
+        //moviesToBeViewed.addAll(movieManager.getAllMovies());
+    }
+
+
+    public void updateMovie(Movie updatedMovie) throws MRSException {
+        // update movie in DAL layer (through the layers)
+        movieManager.updateMovie(updatedMovie);
+
+        // update observable list (and UI)
+        Movie m = moviesToBeViewed.get(moviesToBeViewed.indexOf(updatedMovie));
+        m.setTitle(updatedMovie.getTitle());
+        m.setYear(updatedMovie.getYear());
+    }
+
+
+    public void deleteMovie(Movie selectedMovie) throws MRSException {
+        // delete movie in DAL layer (through the layers)
+        movieManager.deleteMovie(selectedMovie);
+
+        // remove from observable list (and UI)
+        moviesToBeViewed.remove(selectedMovie);
+    }*/
 }
+

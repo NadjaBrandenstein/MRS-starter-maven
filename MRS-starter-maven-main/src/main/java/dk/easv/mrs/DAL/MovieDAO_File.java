@@ -64,41 +64,18 @@ public class MovieDAO_File implements IMovieDataAccess {
 
     @Override
     public Movie createMovie(Movie newMovie) throws Exception {
-        /*List<String> movies = Files.readAllLines(filePath);
-        int id;
+        List<String> movies = Files.readAllLines(filePath);
 
         if (movies.size() > 0) {
             // get next id
             String[] separatedLine = movies.get(movies.size() - 1).split(",");
             int nextId = Integer.parseInt(separatedLine[0]) + 1;
-
-
             String newMovieLine = nextId + "," + newMovie.getYear() + "," + newMovie.getTitle();
             Files.write(filePath, (newMovieLine + "\r\n").getBytes(), APPEND);
 
             return new Movie(nextId, newMovie.getYear(), newMovie.getTitle());
         }
-        return null;*/
-
-        try
-        {
-            List<String> movies = Files.readAllLines(Path.of(MOVIES_FILE));
-
-            if (movies.size() > 0) {
-                // get next id
-                String[] separatedLine = movies.get(movies.size() - 1).split(",");
-                int nextId = Integer.parseInt(separatedLine[0]) + 1;
-                String newMovieLine = nextId + "," + newMovie.getYear() + "," + newMovie.getTitle();
-                Files.write(Path.of(MOVIES_FILE), (newMovieLine + "\r\n").getBytes(), APPEND);
-
-                return new Movie(nextId, newMovie.getYear(), newMovie.getTitle());
-            }
-            return null;
-        }
-        catch (IOException ex) {
-            // fixme: log to file,db etc.
-            throw new easv.mrs.Util.MRSException("Could not read all movies from file.", ex);
-        }
+        return null;
     }
 
 
